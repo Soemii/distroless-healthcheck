@@ -8,7 +8,7 @@ jobs:
   build:
     strategy:
       matrix:
-        images: [ "static-debian12" ]
+        images: [ "static-debian12", "java-base-debian12", "java17-debian12", "java21-debian12" ]
     runs-on: ubuntu-latest
     permissions:
       id-token: write
