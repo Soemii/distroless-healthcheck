@@ -55,7 +55,7 @@ func tcpCommand() *cli.Command {
 			}
 			dial, err := net.DialTimeout("tcp", url, time.Millisecond*time.Duration(command.Uint("timeout")))
 			if err != nil {
-				return err
+				return cli.Exit(err.Error(), 2)
 			}
 			if dial != nil {
 				defer dial.Close()
